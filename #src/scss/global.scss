@@ -1,0 +1,116 @@
+$montserrat: 'Montserrat', sans-serif;
+
+// colors
+$black: #000;
+$green: #548E2A;
+$gray: #818181;
+
+// font-size
+@mixin h1 {
+  font-size: 42px;
+  line-height: 49px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  @media (max-width: 768px) {
+    font-size: 30px;
+    line-height: 37px;
+  }
+}
+@mixin h2 {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+@mixin main-text {
+  font-size: 14px;
+  line-height: 26px;
+}
+@mixin description {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+// global
+html,
+body {
+	box-sizing: border-box;
+	height: 100%;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	outline: transparent;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.content {
+	flex: 1 0 auto;
+}
+
+.footer {
+	flex: 0 0 auto;
+}
+
+body {
+	font-family: $montserrat;
+	font-weight: 500;
+  @include main-text;
+	color: $black;
+}
+
+.container {
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.title {
+  @include h1;
+  @media (max-width: 768px) {
+    ffont-size: 42px;
+    line-height: 49px;
+  }
+}
+.view{
+  display: flex;
+  justify-content: center;
+  &__btn {
+    margin-top: 54px;
+    padding: 20px 65px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #fff;
+    background-color: $green;
+    border: 1px solid $green;
+    border-radius: 75px;
+    transition: all linear 0.3s;
+    cursor: pointer;
+    &:hover {
+      color: $green;
+      background-color: #fff;
+    }
+  }
+}
