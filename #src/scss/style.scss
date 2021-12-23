@@ -145,7 +145,6 @@
   }
   &__item {
     max-width: 293px;
-    padding: 0 6px;
   }
   &__top {
     position: relative;
@@ -172,13 +171,20 @@
     border-radius: 50%;
   }
 
-  &__img {
+  &__box {
     margin-top: 49px;
+    padding: 0 6px;
+  }
+
+  &__img {
     width: 100%;
     padding-top: 114%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  &__inner {
+    padding: 0 6px;
   }
   &__title {
     min-height: 57px;

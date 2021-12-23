@@ -586,7 +586,6 @@ body {
 
 .history__item {
   max-width: 293px;
-  padding: 0 6px;
 }
 
 .history__top {
@@ -617,13 +616,21 @@ body {
   border-radius: 50%;
 }
 
-.history__img {
+.history__box {
   margin-top: 49px;
+  padding: 0 6px;
+}
+
+.history__img {
   width: 100%;
   padding-top: 114%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.history__inner {
+  padding: 0 6px;
 }
 
 .history__title {
