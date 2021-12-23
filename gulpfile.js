@@ -96,9 +96,7 @@ function csslibs() {
 function js() {
   return src(path.src.js) // Путь к исходникам js
     .pipe(fileinclude()) // Подключение js частей
-    .pipe(babel({ // Конвертирует js в старый 
-      presets: ['@babel/env']
-    }))
+
     .pipe(dest(path.build.js)) // Путь вывода js
     .pipe( // Сжимает js
       uglify()

@@ -1,6 +1,8 @@
 if (document.getElementById("first")) {
   let first = new Swiper('.first', {
     slidesPerView: 1,
+    loop: false,
+    allowTouchMove: false,
     navigation: {
       nextEl: '#first__next',
       prevEl: '#first__prev',
@@ -28,15 +30,32 @@ if (document.getElementById("first")) {
       }
     })
   })
+
 }
 
 
 new Swiper('.second', {
-  slidesPerView: 4,
   navigation: {
-    nextEl: '#second__next',
-    prevEl: '#second__prev',
+    nextEl: '.second__next',
+    prevEl: '.second__prev',
   },
+  breakpoints: {
+    320: {
+      slidesPerView: 1.3,
+    },
+    500: {
+      slidesPerView: 2,
+    },
+    660: {
+      slidesPerView: 2.3,
+    },
+    767: {
+      slidesPerView: 3,
+    },
+    991: {
+      slidesPerView: 4,
+    }
+  }
 });
 
 
