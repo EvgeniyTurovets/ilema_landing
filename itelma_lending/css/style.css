@@ -586,18 +586,7 @@ body {
 
 .history__item {
   max-width: 293px;
-}
-
-.history__item:first-child {
-  margin-left: -11px;
-}
-
-.history__item:first-child .history__top {
-  margin-left: 11px;
-}
-
-.history__item .history__inner {
-  padding-left: 11px;
+  padding: 0 6px;
 }
 
 .history__top {
