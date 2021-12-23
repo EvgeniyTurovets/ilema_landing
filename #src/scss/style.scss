@@ -199,19 +199,102 @@
     @include description;
     color: $gray;
   }
+  .view {
+    display: none;
+  }
 }
 @media (max-width: 1100px) {
-  // .history__wrapper {
-  //   flex-direction: column;
-  // }
-  // .history__item {
-  //   max-width: unset;
-  //   display: flex;
-  // }
-  // .history__inner {
-  //   // display: flex;
-  // }
+  .history__wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .history__item {
+    max-width: unset;
+    display: flex;
+  }
+  .history__top {
+    margin-left: 20px;
+    border-bottom: none;
+    border-left: 1px solid #e1e7eb;
+  }
+  .history__date {
+    margin-top: 30px;
+    padding-left: 20px;
+    width: 110px;
+  }
+  .history__dot {
+    bottom: 0;
+    top: 44px;
+    left: -11px;
+  }
+  .history__box {
+    margin: 15px 0 15px 0;
+  }
+  .history__img {
+    width: 230px;
+  }
+  .history__title {
+    margin-top: 50px;
+    font-size: 22px;
+    line-height: 22px;
+  }
+  .history__description {
+    font-size: 16px;
+  }
+  .view {
+    display: flex !important;
+  }
 }
+@media (max-width: 768px) {
+  .history {
+    padding: 56px 0 90px;
+  }
+  .history__item {
+    flex-wrap: wrap;
+    margin-top: 27px;
+    & + .history__item {
+      margin-top: 56px;
+    }
+  }
+  .history__box {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .history__img {
+    width: 100%;
+    height: 261px;
+    padding: 0;
+  }
+  .history__top {
+    display: inline-block;
+    order: 2;
+    width: 64px;
+    margin: 21px 0 0 16px;
+    border: none;
+  }
+  .history__date {
+    width: auto;
+    padding: 0;
+    margin: 0;
+  }
+  .history__dot {
+    top: 54px;
+    left: 0px;
+  }
+  .history__inner {
+    order: 3;
+    width: calc(100% - 80px);
+  }
+  .history__title {
+    margin-top: 25px;
+    min-height: auto;
+  }
+  .history__description {
+    margin-top: 19px;
+  }
+}
+
 
 // projects
 .headings {
@@ -326,7 +409,6 @@
   }
 }
 
-
 .second {
   &__img {
     @include height;
@@ -366,6 +448,15 @@
   color: #fff;
     background-color: #7E7E7E;
     box-shadow: none;
+}
+
+@media (max-width: 1100px) {
+  .projects__bg {
+    display: none;
+  }
+  .projects__wrapper .container {
+    padding: 0;
+  }
 }
 
 
