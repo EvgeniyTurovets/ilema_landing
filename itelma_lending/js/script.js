@@ -1,3 +1,53 @@
+// menu btn
+let menuBtn = document.querySelector('.burger');
+let menu = document.querySelector('.header__list');
+
+menuBtn.onclick = function () {
+  menuBtn.classList.toggle('active');
+  menu.classList.toggle('active');
+};
+
+// phone btn
+window.addEventListener('resize', function (event) {
+  function startResize(e) {
+    let windowWidth = window.innerWidth;
+    let phoneBtn = document.querySelector('.phone');
+    let phoneWrapper = document.querySelector('.phone__wrapper');
+
+    if (windowWidth > 400) {
+      menu.after(phoneBtn);
+    } else {
+      phoneWrapper.prepend(phoneBtn);
+    }
+
+  }
+  startResize();
+}, true);
+
+
+
+// scroll
+document.querySelectorAll('a[href^="#"').forEach(link => {
+
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    let href = this.getAttribute('href').substring(1);
+
+    const scrollTarget = document.getElementById(href);
+
+    // const topOffset = document.querySelector('.scrollto').offsetHeight;
+    const topOffset = 0; // если не нужен отступ сверху 
+    const elementPosition = scrollTarget.getBoundingClientRect().top;
+    const offsetPosition = elementPosition - topOffset;
+
+    window.scrollBy({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  });
+});
+
 if (document.getElementById("first")) {
   let first = new Swiper('.first', {
     slidesPerView: 1,

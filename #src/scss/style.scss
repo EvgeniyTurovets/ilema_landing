@@ -18,13 +18,35 @@
 
 // header
 .header {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   height: 136px;
+  &__list {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    &.active {
+      display: flex;
+    }
+  }
+  &__item {
+    margin: 0 10px;
+  }
+  &__link {
+    font-size: 16px;
+    color: #000;
+    transition: all linear 0.2s;
+    &:hover {
+      color: $green;
+    }
+  }
 }
+
 .logo {
-  height: 48px;
+  height: 36px;
+  margin-right: auto;
   & img {
     height: 100%;
   }
@@ -35,17 +57,106 @@
   font-weight: 700;
   color: $black;
   letter-spacing: 0.05em;
+  &__wrapper {
+    display: none;
+    @media (max-width: 400px) {
+      display: block;
+    }
+  }
+}
+.lang {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 48px;
+  font-weight: 500;
+  margin-left: 24px;
+  color: #000;
+  border: 1px solid #e0e9ea;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  &:hover {
+    border: 1px solid $green;
+    background-color: $green;
+    color: #fff;
+  }
+}
+.burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-left: 16px;
+  position: relative;
+  cursor: pointer;
+}
+.burger__line,
+.burger__line::before,
+.burger__line::after {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #000;
+  border-radius: 2px;
+  transition: all 0.2s linear;
+}
+.burger__line::before {
+  content: '';
+  top: -6px;
+}
+.burger__line::after {
+  content: '';
+  top: 6px;
+}
+.burger.active {
+  .burger__line {
+    transform: rotate(45deg);
+  }
+  .burger__line::before {
+    transform: rotate(0);
+    top: 0;
+  }
+  .burger__line::after {
+    transform: rotate(90deg);
+    top: 0;
+  }
 }
 @media (max-width: 991px) {
   .header {
     height: 68px;
   }
-  .logo {
-    height: 30px;
-  }
   .phone {
     font-size: 14px;
     line-height: 15px;
+  }
+}
+@media (max-width: 800px) {
+  .burger {
+    display: flex;
+  }
+  .header__list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 300px;
+    flex-direction: column;
+    background-color: #fff;
+  }
+  .header__item {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 10px 20px;
+    border-top: 1px solid #e0e9ea;
+  }
+  .header__link {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 8px 0;
   }
 }
 
@@ -68,9 +179,10 @@
 
 // about
 .about {
-  padding: 46px 15px 74px;
+  padding: 0 15px 40px;
   display: flex;
   &__title {
+    min-width: 300px;
     @include h1;
     margin: 40px 0 0 0;
   }
@@ -137,11 +249,11 @@
 
 // history
 .history {
-  padding: 79px 0 103px;
+  padding: 40px 0 50px;
   background-color: #F8F8F8;
   &__wrapper {
     display: flex;
-    margin-top: 36px;
+    margin-top: 40px;
   }
   &__item {
     max-width: 293px;
@@ -172,7 +284,7 @@
   }
 
   &__box {
-    margin-top: 49px;
+    margin-top: 50px;
     padding: 0 6px;
   }
 
@@ -247,11 +359,14 @@
 }
 @media (max-width: 768px) {
   .history {
-    padding: 56px 0 90px;
+    padding: 23px 0 45px;
+  }
+  .history__wrapper {
+    margin-top: 0px;
   }
   .history__item {
     flex-wrap: wrap;
-    margin-top: 27px;
+    margin-top: 25px;
     & + .history__item {
       margin-top: 56px;
     }
@@ -302,7 +417,7 @@
   &__box {
     display: flex;
     justify-content: space-between;
-    margin-top: 46px;
+    margin-top: 40px;
   }
   &__name {
     position: relative;
@@ -345,11 +460,11 @@
   }
 }
 .projects {
-  padding: 79px 0;
+  padding: 40px 0 25px;
   &__wrapper {
     position: relative;
     max-width: 1920px;
-    margin: 39px auto 0;
+    margin: 40px auto 0;
   }
   &__bg {
     position: absolute;
@@ -375,7 +490,7 @@
   }
   &__arrows {
     justify-content: flex-end;
-    margin-top: 30px;
+    margin-top: 15px;
   }
 
   &__title {
@@ -465,6 +580,7 @@
   transition: all linear 0.2s;
   &__box {
     display: flex;
+    padding: 15px !important;
   }
   &__prev {
 
@@ -496,7 +612,7 @@
     display: none;
   }
   .projects {
-    padding: 70px 0 65px;
+    padding: 35px 0 32px;
   }
   .projects .view {
     display: flex !important;
@@ -504,8 +620,12 @@
   .projects .banner {
     display: none;
   }
+  .projects__wrapper {
+    margin-top: 0;
+  }
   .first__wrapper {
     flex-direction: column;
+    margin-top: 15px;
   }
   .first__slide {
     margin-top: 25px;
@@ -514,7 +634,7 @@
     }
   }
   .second__arrows {
-    margin: 14px 0 0 29px;
+    margin: 0 0 0 14px;
     display: flex !important;
   }
   .first__arrows {
@@ -587,7 +707,7 @@
   &__arrows {
     position: absolute;
     z-index: 10;
-    bottom: 86px;
+    bottom: 79px;
     left: 50%;
     justify-content: center;
     transform: translateX(-50%);
