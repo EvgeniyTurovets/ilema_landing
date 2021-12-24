@@ -42,11 +42,13 @@
       color: $green;
     }
   }
+  .logo {
+    margin-right: auto;
+  }
 }
 
 .logo {
   height: 36px;
-  margin-right: auto;
   & img {
     height: 100%;
   }
@@ -253,7 +255,7 @@
   background-color: #F8F8F8;
   &__wrapper {
     display: flex;
-    margin-top: 40px;
+    margin-top: 24px;
   }
   &__item {
     max-width: 293px;
@@ -768,11 +770,6 @@
   margin: 0 auto;
   height: 614px;
   overflow: hidden;
-  & ymaps:first {
-    // width: 100% !important;
-    // height: 100% !important;
-    // margin: 0 !important;
-  }
   &__item { 
     width: 100%;
     height: 100%;
@@ -821,6 +818,21 @@
       color: $gray;
       @include description;
     }
+  }
+  canvas {
+    -webkit-filter: grayscale(100%)!important;
+  }
+  .ymaps-2-1-79-ground-pane{
+      -webkit-filter: grayscale(100%)!important;
+  }
+  .ymaps-2-1-79-zoom__scale{
+    display: none;
+  }
+  .ymaps-2-1-79-map-copyrights-promo{
+    display: none;
+  }
+  .ymaps-2-1-79-copyright__wrap{
+      display: none;
   }
 }
 .social {

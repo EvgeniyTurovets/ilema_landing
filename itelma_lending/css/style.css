@@ -546,9 +546,12 @@ body {
   color: #548E2A;
 }
 
+.header .logo {
+  margin-right: auto;
+}
+
 .logo {
   height: 36px;
-  margin-right: auto;
 }
 
 .logo img {
@@ -706,7 +709,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 40px;
+  margin-top: 24px;
 }
 
 .history__item {
@@ -1196,6 +1199,26 @@ body {
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
+}
+
+.map canvas {
+  -webkit-filter: grayscale(100%) !important;
+}
+
+.map .ymaps-2-1-79-ground-pane {
+  -webkit-filter: grayscale(100%) !important;
+}
+
+.map .ymaps-2-1-79-zoom__scale {
+  display: none;
+}
+
+.map .ymaps-2-1-79-map-copyrights-promo {
+  display: none;
+}
+
+.map .ymaps-2-1-79-copyright__wrap {
+  display: none;
 }
 
 .social {
